@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Tip Calculator</title>
+
+    <style>
+        body{
+            background-image: url('money.jpeg');
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            padding-top: 12%;
+            padding-left: 5%;
+        }
+    </style>
+    </head>
+
+<body>
+<div class="left-container" style="background-color:rgb(152, 162, 152);">
+    <div class="inner-left">
+        <h1 class="title"> TIP CALCULATOR </h1>
+
+            <div>
+                <label for="location">LOCATION</label>
+                <input name="location" type="text" id="location" placeholder="enter location" />
+            </div>
+            <div class = "amount-input">
+                <label for="amount">AMOUNT</label>
+                <input name="amount" type="number" id="amount" placeholder="enter amount"/>
+            </div>
+        <div class = "tip-selector">
+            <h4>Select Tip Amount</h4>
+            <input type="radio" id="html" name="tip" value=".15">
+            <label for="html">15%</label><br>
+            <input type="radio" id="css" name="tip" value=".20">
+            <label for="css">20%</label><br>
+            <input type="radio" id="javascript" name="tip" value=".25">
+            <label for="javascript">25%</label>
+        </div>
+        <button onclick = "calculate()" style="width:100%"> SUBMIT </button>
+    </div>
+    
+    <div class = "buttons" id = "id">
+        
+        <button id = "clear" style="width:100%"> CLEAR </button>
+    </div>
+
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

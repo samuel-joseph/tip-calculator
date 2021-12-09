@@ -1,0 +1,53 @@
+*{   
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#id{
+    height: 440px;
+    overflow: scroll;
+    float: left;
+    position: relative;
+    margin-left: -5px;
+}
+
+body {
+    font-size: 20px;
+}
+
+.amount-input {
+    padding-top: 20px;
+    align-items: center;
+}
+
+.tip-selector {
+    padding: 10px;
+    align-items: center;
+}
+.left-container{
+    opacity: .90;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    padding: 55px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.buttons{
+    padding: 55px;
+    border-radius: 25px;
+    align-content: space-between;
+    align-self: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
