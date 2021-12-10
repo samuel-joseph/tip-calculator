@@ -4,10 +4,17 @@ document.getElementById("clear").addEventListener("click", function () {
     div.removeChild(div.lastElementChild);
   }
   localStorage.clear();
+  document.getElementById("id").style.overflow = "hidden";
 });
 
 function load() {
   var records = JSON.parse(localStorage.getItem("records"));
+
+  if (records == undefined) {
+    document.getElementById("id").style.overflow = "hidden";
+  } else {
+    document.getElementById("id").style.overflow = "scroll";
+  }
 
   for (let i = 0; i < records.length; i++) {
     createRecordDOM(records[i], i);
@@ -55,13 +62,12 @@ function calculate() {
     if (records == undefined) {
       records = [];
     }
-
+    document.getElementById("id").style.overflow = "scroll";
     createRecordDOM(obj, records.length);
   }
 }
 
 function createRecordDOM(obj, index) {
-
   var container = document.createElement("div");
   var date = document.createElement("p");
   var time = document.createElement("p");
@@ -76,10 +82,11 @@ function createRecordDOM(obj, index) {
   deleteButton.addEventListener("click", function () {
     let records = JSON.parse(localStorage.getItem("records"));
     let divList = document.getElementById("id");
+    console.log(records);
     records.splice(index, 1);
+    divList.removeChild(this.parentNode);
+    console.log(records);
     localStorage.setItem("records", JSON.stringify(records));
-    divList.removeChild(divList.children[index]);
-    
   });
 
   date.textContent = "Date: " + obj.date;

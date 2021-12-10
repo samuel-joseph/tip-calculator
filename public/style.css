@@ -6,7 +6,7 @@
 
 #id {
   height: 440px;
-  overflow: scroll;
+  /* overflow: scroll; */
   float: left;
   position: relative;
   margin-left: -5px;
