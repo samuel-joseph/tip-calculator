@@ -32,10 +32,12 @@ function calculate() {
 
   for (var i = 0, length = radios.length; i < length; i++) {
     if (radios[i].checked) {
-      obj.tip = radios[i].value;
       obj.amount_tip = ((1 + radios[i].value) * amount).toFixed(2);
       obj.tip = (obj.amount_tip - obj.amount).toFixed(2);
       break;
+    }
+    if (i == length - 1) {
+      obj.amount_tip = obj.amount;
     }
   }
 
@@ -59,6 +61,7 @@ function calculate() {
 }
 
 function createRecordDOM(obj, index) {
+
   var container = document.createElement("div");
   var date = document.createElement("p");
   var time = document.createElement("p");
@@ -75,7 +78,8 @@ function createRecordDOM(obj, index) {
     let divList = document.getElementById("id");
     records.splice(index, 1);
     localStorage.setItem("records", JSON.stringify(records));
-    divList.removeChild(divList.childNodes[index + 1]);
+    divList.removeChild(divList.children[index]);
+    
   });
 
   date.textContent = "Date: " + obj.date;

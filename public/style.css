@@ -33,14 +33,19 @@ body {
   padding: 55px;
   align-items: center;
   justify-content: space-between;
+  background-color: rgb(152, 162, 152);
 }
 .buttons {
+  display: flex;
+  flex-direction: column-reverse;
   padding: 55px;
   border-radius: 25px;
   align-content: space-between;
   align-self: flex-end;
 }
 
-.remove {
-  /* background-color: red; */
+@media only screen and (max-width: 600px) {
+  .left-container {
+    flex-direction: column;
+  }
 }
